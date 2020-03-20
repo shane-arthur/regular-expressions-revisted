@@ -15,3 +15,9 @@ const regex = regexp = /pattern/flags
 *m* - Multiline match
 
 *y* - Sticky mode - searching text in exact position
+
+## Searching
+```
+let str = "We will, we will rock you";
+const matches =  str.match(/we/gi);
+```
