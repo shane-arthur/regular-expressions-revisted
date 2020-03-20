@@ -21,3 +21,10 @@ const regex = regexp = /pattern/flags
 let str = "We will, we will rock you";
 const matches =  str.match(/we/gi);
 ```
+
+## Replacing
+
+```
+let str = 'We will, we will';
+str = str.replace(/we will/, 'rock you');
+```
