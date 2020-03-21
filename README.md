@@ -74,4 +74,16 @@ str1 = 'It's fleece was white as snow";
 result = /snow$/.test(str1) // true
 ```
 
+**Full Match**
+
+Both anchors together `^...$` are often used to test for a full match
+
+```
+const str = 'test'
+const regex = /^test$/
+
+const test = regex.test(str) // only case where this will ever be true
+
+```
+
 
