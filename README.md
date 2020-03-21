@@ -30,4 +30,10 @@ str = str.replace(/we will/, 'rock you');
 ```
 
 ```
-$& ``` inserts the whole match
+$&  // inserts the whole match
+$` // inserts a part of the string before the match
+$' // inserts a part of the string after the match
+$n // if n is a 1-2 digit number, then it inserts the content of the n-parenthesis
+$<name> // inserts the content of the parentheses with the given name
+$$ // inserts character $
+```
