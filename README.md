@@ -28,3 +28,6 @@ const matches =  str.match(/we/gi);
 let str = 'We will, we will';
 str = str.replace(/we will/, 'rock you');
 ```
+
+```
+$& ``` inserts the whole match
