@@ -86,4 +86,51 @@ const test = regex.test(str) // only case where this will ever be true
 
 ```
 
+## Multiline mode ##
+
+Multiline mode is enabled by the `m` flag.
+
+This only affect the behavior of `^` and `$`
+
+In multiline mode they match not only at the beginning and end of the sting, but the start / end of a line.
+
+```
+let str = '1st place: Winnie
+2nd place: Homer
+3rd palce: Peter';
+
+const matches = str.match(/^\d/gm); // 1 , 2 , 3
+
+```
+Without the `m` flag only the first digit is matched
+
+```
+let str = `1st place: Winnie
+2nd place: Homer
+3rd palce: Peter`;
+
+const matches = str.match(/^\d/g); // 1
+```
+
+Similarily for the end of a string, the `$` sign behaves similarily
+The regex `\d$` finds the last digit in every line
+```
+let str = let str = 'Winnie: 1
+Piglet: 2
+Eeyore: 3';
+
+const matches = str.match(/\d$/gm); // 1,2,3
+```
+
+Without the flag `m` the dollar `$` would only match the last digit in the whole text which is 3
+
+**Searching for \n instead of ^$**
+```
+let str = 'Winnie: 1 
+Piglet 2
+Eeyore 3'
+
+const matches = str.match(/\d/n/gm); // 1\n 2\n
+```
+As we can see, there are 2 matches instead of 3 and the result contains the newline character
 
