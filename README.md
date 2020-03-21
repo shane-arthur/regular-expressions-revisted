@@ -60,9 +60,9 @@ const matches = str.match(regex) // $2,€1,¥9
 
 ## Anchors
 
-The caret **^** & dollar **$** have special meaning in regex. They are called anchors.
+The caret `^` & dollar `$` have special meaning in regex. They are called anchors.
 
-The **^** matches at the beginning of text and the **$** matches at the end.
+The `^` matches at the beginning of text and the `$` matches at the end.
 
 The pattern `^Mary` means "Start the word with Mary"
 
