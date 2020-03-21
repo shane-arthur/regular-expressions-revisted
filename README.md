@@ -134,3 +134,42 @@ const matches = str.match(/\d/n/gm); // 1\n 2\n
 ```
 As we can see, there are 2 matches instead of 3 and the result contains the newline character
 
+## Word Boundaries ##
+
+A word boundary is a test, similar to `^` & `$`
+
+There are three different positions that qualify as words boundaries:
+- At the start of the string, if the first string character is a word character `\w`
+- Between two characters in the string, where one is a word character `\w` and the other is not
+- At the end of the string, if the last string character is a word `/w`
+
+```
+let str = 'Hello Java!";
+const regex = /\bJava\b/;
+let matches = str.match(regex) // Java
+
+str = 'Hello JavaScript!';
+matches = str.match(regex); // null;
+```
+
+```
+let result = "Hello, Java!".match(/\bHello\b/); // Hello
+result = "Hello, Java!".match(/\bJava\b/); // Java
+result = "Hello, Java!".match(/\Hell\b/); // Null - No Match 
+result = "Hello, Java!".match(/\Java!\b/); // Null - No Match 
+```
+
+Digits can also be used in boundaries: 
+```
+let result = "1 23 456 78".match(/\b\d\d\b/g);  // 23,78
+result = "12,34,56".match(/b\d\d\b/g); // 12,34,56
+```
+
+```
+const str = 'Breakfeast at 09:00 in the room 123:456';
+const regex = '/\b\d\d\:\d\d\b/';
+const result = str.match(regex); // 09:00
+```
+
+
+
