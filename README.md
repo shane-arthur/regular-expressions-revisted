@@ -37,3 +37,41 @@ $n // if n is a 1-2 digit number, then it inserts the content of the n-parenthes
 $<name> // inserts the content of the parentheses with the given name
 $$ // inserts character $
 ```
+
+## Testing
+
+```
+let str = 'I love javascript'
+let regex = /LOVE/i
+
+const result = regexp.test(str) // true
+```
+
+## Unicode Properties
+
+The u flag enables support of Unicode in regular expressions
+
+```
+let regex = /\p{Sc}\d/gu; // identifier for a currency in junction with u flag
+let str = `Prices: $2, €1, ¥9`;
+
+const matches = str.match(regex) // $2,€1,¥9
+```
+
+## Anchors
+
+The caret **^** & dollar **$** have special meaning in regex. They are called anchors.
+
+The **^** matches at the beginning of text and the **$** matches at the end.
+
+The pattern `^Mary` means "Start the word with Mary"
+
+```
+let str1 = "Mary had a little lamb"
+const result = /^Mary/.test(str1) // true
+
+str1 = 'It's fleece was white as snow";
+result = /snow$/.test(str1) // true
+```
+
+
